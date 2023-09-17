@@ -22,6 +22,7 @@ namespace DuplicateFinder.Models
             {
                 sourcePath = value;
                 OnPropertyChanged();
+                OnPropertyChanged("DestinationPath");
             }
         }
         public string? DestinationPath
@@ -31,6 +32,7 @@ namespace DuplicateFinder.Models
             {
                 destinationPath = value;
                 OnPropertyChanged();
+                OnPropertyChanged("SourcePath");
             }
         }
 
@@ -50,7 +52,7 @@ namespace DuplicateFinder.Models
         {
             if (!Path.Exists(property)) return "Directory does not exist ...";
             else if (SourcePath == DestinationPath) return "Identical paths of the initial and final catalog ...";
-            else return "";
+            else return string.Empty;
         }
         public string Error => throw new NotImplementedException();
         public event PropertyChangedEventHandler? PropertyChanged;

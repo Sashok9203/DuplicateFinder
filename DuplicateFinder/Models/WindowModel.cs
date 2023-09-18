@@ -71,10 +71,7 @@ namespace DuplicateFinder.Models
             CurentState = State.Idle;
         }
 
-
         public Directories Dirs { get; set; } 
-
-        
 
         public WindowModel()
         {
